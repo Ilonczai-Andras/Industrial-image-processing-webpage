@@ -101,14 +101,123 @@
     <div class="container">
       <a href="index.html" class="back-link">← Vissza a főoldalra</a>
 
-      <div class="placeholder">
-        <h3>🚧 Hamarosan</h3>
+      <div class="card">
+        <h2>📋 Projekt Összefoglalás</h2>
         <p>
-          A 3. mérföldkő tartalma a végleges eredmények és értékelés elkészülte
-          után kerül feltöltésre.
+          A 3. mérföldkő a teljes 3D pontfelhő regisztrációs pipeline
+          véglegesítésén és robusztusságának maximalizálásán összpontosított. Az
+          utolsó két fejlesztési commit a regisztrációs algoritmus
+          robusztusságát javította és a vizualizációs rendszert PyVista alapokra
+          építette át.
         </p>
-        <p style="margin-top: 0.5rem; font-size: 0.9rem">
-          Tervezett határidő: 2026. május
+      </div>
+
+      <div class="card">
+        <h2>🔧 Végleges Algoritmus</h2>
+        <p><strong>Hat-lépéses pipeline:</strong></p>
+        <ol style="margin-left: 1.5rem; margin-top: 0.8rem">
+          <li>
+            <strong>Adatbevitel & Előfeldolgozás:</strong> Robusztus
+            hiba-kezelés, geometriai validáció
+          </li>
+          <li>
+            <strong>Jellemzők Kinyerése:</strong> PCA-alapú normális becslés,
+            FPFH 33D deszkriptorok
+          </li>
+          <li>
+            <strong>Durva Illesztés (RANSAC):</strong> Dinamikus paraméter
+            hangolás
+          </li>
+          <li>
+            <strong>Finom Illesztés (ICP):</strong> Point-to-Point és
+            Point-to-Plane variánsok
+          </li>
+          <li>
+            <strong>Minőségértékelés:</strong> Fitness, RMSE, korespondenciák
+            száma
+          </li>
+          <li>
+            <strong>Eredmény Exportálás:</strong> PLY fájlok, JSON
+            transzformációk, vizualizáció
+          </li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <h2>📊 Legújabb Fejlesztések</h2>
+        <p><strong>Regisztrációs Robusztusság Javítása</strong></p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem">
+          <li>Dinamikus RANSAC/ICP paraméter hangolás</li>
+          <li>Kiterjesztett hiba-kezelés és geometriai validáció</li>
+          <li>Statistical Outlier Removal optimalizálása</li>
+          <li>Konzisztens normális orientáció</li>
+        </ul>
+
+        <p style="margin-top: 1rem">
+          <strong>Interaktív Vizualizáció PyVista Alapokkal</strong>
+        </p>
+        <ul style="margin-left: 1.5rem; margin-top: 0.5rem">
+          <li>PyVista alapú interaktív 3D megjelenítő</li>
+          <li>Terminál-alapú fájlválasztó interface</li>
+          <li>Szín-kódolás és legenda rendszer</li>
+          <li>Forgatható, zoomolható 3D vezérlés</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>⚡ Teljesítmény</h2>
+        <p><strong>Feldolgozási idő a saját modellen:</strong></p>
+        <p
+          style="
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+          "
+        >
+          A teljes regisztrációs pipeline összesen
+          <strong>&lt; 5 másodperc</strong> alatt fut le. Az egyes feldolgozási
+          szakaszok időigénye az objektum méretétől és a pontfelhő sűrűségétől
+          függ.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>📈 Eredmények — Saját Modell</h2>
+        <p><strong>Pipeline teljesítménye:</strong></p>
+        <ul style="margin-left: 1.5rem">
+          <li>
+            <strong>Robusztusság:</strong> 6 scanből 5 sikeresen illeszkedett
+            (4. scan sérült adat miatt)
+          </li>
+          <li><strong>Fitness értékek:</strong> 0.40–0.60 között</li>
+          <li><strong>RMSE (mm):</strong> 1.3–1.4 mm között</li>
+          <li>
+            <strong>Feldolgozási idő:</strong> &lt; 5 másodperc az egész
+            pipeline-hez
+          </li>
+          <li>
+            <strong>Végső rekonstrukció:</strong> 3146 pont (427,980 pontból,
+            0,74% sűrítési arány)
+          </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>📄 Dokumentáció</h2>
+        <p>
+          A részletes technikai dokumentáció a
+          <a
+            href="3.%20merfoldko/3_merfoldko_dokumentacio.tex"
+            style="
+              color: var(--primary);
+              text-decoration: none;
+              font-weight: 600;
+            "
+          >
+            LaTeX dokumentumban
+          </a>
+          érhető el, amely matematikai formulákat, technikai részleteket és
+          részletes algoritmusleírásokat tartalmaz.
         </p>
       </div>
     </div>
